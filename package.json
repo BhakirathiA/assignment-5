@@ -1,0 +1,39 @@
+{
+  "name": "assignment-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "debug": "node --inspect -r tsx/cjs src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bullmq": "^6.3.12",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "ioredis": "^5.11.1",
+    "mongodb": "^7.7.0",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.1.0",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "reflect-metadata": "^0.2.2",
+    "resend": "^6.32.1",
+    "socket.io": "^4.8.4",
+    "typeorm": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.5",
+    "@types/nodemailer": "^8.0.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

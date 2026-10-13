@@ -1,0 +1,44 @@
+services:
+  app:
+    build: .
+    container_name: task-api
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      NODE_ENV: production
+      CORS_ORIGIN: http://localhost:3000
+
+      # DB + queue
+      MONGO_URI: mongodb://mongo:27017/taskdb
+      REDIS_URL: redis://redis:6379
+
+      # Mail mode (recommended for your setup)
+      MAIL_MODE: stream
+      REMINDER_TO: test@local.dev
+
+      # If you switch to resend
+      # RESEND_API_KEY: re_xxxxxxxxxxxxxxxxxxxxx
+    depends_on:
+      - mongo
+      - redis
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: task-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: task-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
