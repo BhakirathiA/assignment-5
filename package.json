@@ -7,7 +7,8 @@
     "dev": "tsx watch src/server.ts",
     "debug": "node --inspect -r tsx/cjs src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "lint": "eslint \"src/**/*.{ts,tsx}\""
   },
   "keywords": [],
   "author": "",
