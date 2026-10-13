@@ -29,7 +29,7 @@ Containerized with Docker and automated with GitHub Actions CI.
 
 ---
 
-## Architecture (High level)
+## Architecture
 
 Client → Express API → MongoDB (tasks)  
                       ↘ Redis + BullMQ (scheduled reminder jobs) → Worker → Mail provider (Stream/SMTP/Resend)
