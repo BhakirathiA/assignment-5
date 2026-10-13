@@ -16,8 +16,7 @@ const toId = (id: string | string[] | undefined) => {
   return value && ObjectId.isValid(value) ? new ObjectId(value) : null;
 };
 
-tasksRouter.get("/heavy", cache(REDIS_KEY, 60), async (_req, res) => {
-  await new Promise((r) => setTimeout(r, 300));
+tasksRouter.get("/heavy", cache(REDIS_KEY, 60*60), async (_req, res) => {
   const tasks = await repo().find();
   const total = tasks.length;
   const completed = tasks.filter((t) => t.completed).length;

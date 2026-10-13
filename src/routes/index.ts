@@ -4,7 +4,7 @@ import { tasksRouter } from './task.route';
 
 const router = Router();
 
-router.use('/cpu', cpuRouter);
 router.use('/tasks', tasksRouter);
+router.use('/cpu', cpuRouter);
 
 export default router;
