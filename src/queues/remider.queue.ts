@@ -11,8 +11,12 @@ export async function scheduleDailyReminder() {
     { pattern: "0 8 * * *" },
     {
       name: "daily-reminder",
-      data: {},
+      data: {
+        message: "This is your daily reminder!"
+      },
       opts: {
+        attempts: 5,
+        backoff: { type: "exponential", delay: 60_000 },
         removeOnComplete: 1000,
         removeOnFail: 1000
       }
