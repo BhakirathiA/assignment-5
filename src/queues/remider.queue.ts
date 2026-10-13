@@ -8,7 +8,7 @@ export const reminderQueue = new Queue("task-reminders", {
 export async function scheduleDailyReminder() {
   await reminderQueue.upsertJobScheduler(
     "daily-reminder",
-    { pattern: "* * * * *" },
+    { pattern: "0 8 * * *" },
     {
       name: "daily-reminder",
       data: {},
