@@ -5,8 +5,8 @@ Containerized with Docker and automated with GitHub Actions CI.
 
 ## Live Deployment
 
-- **API URL:** `https://YOUR-DEPLOYED-URL`
-- **Health check:** `https://YOUR-DEPLOYED-URL/health`
+- **API URL:** `https://assignment-5-fhjy.onrender.com`
+- **Health check:** `https://assignment-5-fhjy.onrender.com/health`
 ---
 
 ## Features
@@ -43,31 +43,6 @@ Client → Express API → MongoDB (tasks)
 - **Socket.IO**: realtime channel (optional for reminders but useful for live updates)
 
 ---
-
-## Environment Variables
-
-Create `.env`:
-
-```env
-PORT=3001
-NODE_ENV=development
-CORS_ORIGIN=http://localhost:3000
-
-MONGO_URI=mongodb://localhost:27017/taskdb
-REDIS_URL=redis://localhost:6379
-
-MAIL_MODE=stream
-REMINDER_TO=test@local.dev
-
-# SMTP mode (optional)
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
-
-# Resend mode (optional)
-RESEND_API_KEY=
-```
 
 ### MAIL_MODE notes
 
